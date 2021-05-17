@@ -184,6 +184,7 @@ p {
   display: inline-block;
   color: white;
   transition: all ease 0.2s;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -465,6 +466,38 @@ p {
   border: 1px white solid;
   padding: 0.5rem;
   border-radius: 50%;
+}
+
+.footer__media > a {
+  transition: transform 0.3s ease;
+}
+
+.footer__media > a:hover {
+  transform: scale(1.1);
+}
+
+.header__media {
+  position: absolute;
+  bottom: 2%;
+  left: 5%;
+  display: flex;
+  width: 10%;
+  justify-content: space-evenly;
+}
+
+.header__media i {
+  color: #434242;
+  border: 1px #434242 solid;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.header__media > a {
+  transition: transform 0.3s ease;
+}
+
+.header__media > a:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 49rem) {
