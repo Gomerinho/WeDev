@@ -182,8 +182,15 @@ p {
   padding: 0.85em 0.3em;
   text-transform: uppercase;
   display: inline-block;
-
   color: white;
+  transition: all ease 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-10%);
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
 }
 
 .btn-rounded {
