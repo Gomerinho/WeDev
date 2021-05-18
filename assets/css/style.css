@@ -136,6 +136,16 @@ p {
   font-family: 'Poppins', sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+html.active,
+body.active {
+  overflow-y: hidden;
+}
+
 .header__hero {
   width: 100%;
   height: 100vh;
@@ -228,6 +238,7 @@ p {
   color: #434242;
   top: 2%;
   right: 3%;
+  display: none;
 }
 .header__button-explore {
   padding: 0.6rem 1.7rem;
@@ -235,6 +246,7 @@ p {
   color: #434242;
   bottom: 2%;
   right: 3%;
+  display: none;
 }
 
 .header__content {
@@ -255,6 +267,92 @@ p {
 
 .header__content span {
   font-weight: bold;
+}
+
+.header__menu {
+  position: absolute;
+  right: 0%;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: all 0.25s ease-in-out;
+  height: 100vh;
+  border-radius: 20px 0 0 10px;
+  z-index: 99;
+}
+
+.backdrop.active {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  backdrop-filter: blur(10px);
+  z-index: 3;
+  overflow-y: hidden;
+}
+
+.header__menu > ul {
+  margin-top: 50%;
+  font-size: 48px;
+  padding: 0 2rem;
+}
+.header__menu > ul > li:not(:first-child) {
+  margin-top: 1em;
+}
+.header__menu > ul > li > a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+}
+.header__menu > ul > li:hover {
+  transform: translateY(-10%);
+}
+
+.header__menu.active {
+  transform: translateX(0%);
+  background-color: #2fcc71f5;
+}
+.header__burger {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+}
+
+.burger__menu {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.burger__menu .line {
+  width: 100%;
+  height: 1px;
+  background: black;
+  position: absolute;
+  transition: 0.3s all;
+  z-index: 100;
+}
+
+.burger__menu .line:first-of-type {
+  top: 0%;
+}
+
+.burger__menu .line:last-of-type {
+  bottom: 0%;
+}
+
+.burger__menu.active .line:first-of-type {
+  top: 50%;
+  transform: rotate(-45deg) translateY(-50%);
+}
+.burger__menu.active .line:last-of-type {
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
 }
 
 .about {
@@ -481,7 +579,7 @@ p {
   bottom: 2%;
   left: 5%;
   display: flex;
-  width: 10%;
+  width: 35%;
   justify-content: space-evenly;
 }
 
@@ -513,6 +611,21 @@ p {
   .header__button-explore {
     border: white 2px solid;
     color: white;
+  }
+
+  .header__media {
+    width: 15%;
+  }
+
+  .header__burger {
+    display: none;
+  }
+
+  .header__button-login {
+    display: inherit;
+  }
+  .header__button-explore {
+    display: inherit;
   }
 
   .about__btn {
